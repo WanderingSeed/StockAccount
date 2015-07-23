@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">StockAccount</string>
+    <string name="app_name" >股帐</string>
+    <string name="transferred_in">转入</string>
+    <string name="transferred_out">转出</string>
+    <string name="stock_value">持仓</string>
+    <string name="compute">计算</string>
+    <string name="total_assets">总资产</string>
+    <string name="total_stock_value">总持仓</string>
+    <string name="total_revenue">总收益</string>
 
 </resources>

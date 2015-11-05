@@ -24,12 +24,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/total_assets"
+                android:text="@string/total_investment"
                 android:textColor="@color/red"
                 android:textSize="@dimen/important_text_size" />
 
             <TextView
-                android:id="@+id/textView1"
+                android:id="@+id/txt_total_investment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10000"
@@ -49,7 +49,6 @@
                 android:orientation="vertical" >
 
                 <TextView
-                    android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/total_stock_value"
@@ -57,7 +56,7 @@
                     android:textSize="@dimen/sub_important_text_size" />
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/txt_total_stock_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="5000"
@@ -73,7 +72,6 @@
                 android:orientation="vertical" >
 
                 <TextView
-                    android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/total_revenue"
@@ -81,7 +79,7 @@
                     android:textSize="@dimen/sub_important_text_size" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/txt_total_revenue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="500"
@@ -104,22 +102,22 @@
             android:layout_weight="1" >
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/btn_transfer_in"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/bg_btn_main"
-                android:text="@string/transferred_in"
+                android:text="@string/transfer_in"
                 android:textSize="@dimen/button_text_size" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btn_transfer_out"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/bg_btn_main"
-                android:text="@string/transferred_out"
+                android:text="@string/transfer_out"
                 android:textSize="@dimen/button_text_size" />
         </LinearLayout>
 
@@ -130,7 +128,7 @@
             android:layout_weight="1" >
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/btn_stock_value"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -139,7 +137,7 @@
                 android:textSize="@dimen/button_text_size" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/btn_compute"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"

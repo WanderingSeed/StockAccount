@@ -1,6 +1,5 @@
 package com.morgan.stockaccount.data;
 
-import com.morgan.stockaccount.model.StockDealRecord;
 import com.morgan.stockaccount.model.TransferRecord;
 import com.morgan.stockaccount.util.PreferenceUtil;
 
@@ -13,18 +12,22 @@ import com.morgan.stockaccount.util.PreferenceUtil;
  */
 public class StockDataManager {
 
+    private static StockDataManager mInstance;
     private static final String KEY_TRANSFER_IN = "key_transfer_in";
     private static final String KEY_TRANSFER_OUT = "key_transfer_out";
     private float mTotalTransferIn = 0.0f; // 总转入
     private float mTotalTransferOut = 0.0f; // 总转出
-    private float mTotalStockValues = 0.0f; // 总持仓
-    private float mTotalRevenue = 0.0f; // 总收益
 
-    public StockDataManager() {
+    private StockDataManager() {
         mTotalTransferIn = PreferenceUtil.getInstance().getFloat(KEY_TRANSFER_IN, 0);
         mTotalTransferOut = PreferenceUtil.getInstance().getFloat(KEY_TRANSFER_OUT, 0);
-        mTotalStockValues = DataBaseManager.getInstance().getTotalKeepStockValue();
-        mTotalRevenue = DataBaseManager.getInstance().getTotalRevenue();
+    }
+
+    public static StockDataManager getInstance() {
+        if (null == mInstance) {
+            mInstance = new StockDataManager();
+        }
+        return mInstance;
     }
 
     /**
@@ -75,24 +78,6 @@ public class StockDataManager {
     }
 
     /**
-     * 获取持股价值，此价值为买入价值，暂时不会跟随股价变动
-     * 
-     * @return
-     */
-    public float getTotalStockValues() {
-        return mTotalStockValues;
-    }
-
-    /**
-     * 获取总收益
-     * 
-     * @return
-     */
-    public double getTotalRevenue() {
-        return mTotalRevenue;
-    }
-
-    /**
      * 在添加转账记录的时候调用
      * 
      * @param record
@@ -105,25 +90,6 @@ public class StockDataManager {
             break;
         case OUT:
             setTotalTransferOut(getTotalTransferOut() + record.getMoney());
-            break;
-        default:
-            break;
-        }
-    }
-
-    /**
-     * 在添加股票记录的时候调用
-     * 
-     * @param record
-     *            新的股票交易记录
-     */
-    public void onAddStockDealRecord(StockDealRecord record) {
-        // 有股票交易记录就会更改总持仓
-        mTotalStockValues = DataBaseManager.getInstance().getTotalKeepStockValue();
-        switch (record.getType()) {
-        case SELL:
-            // 有股票交易记录就有可能更改总收益，因股票不支持双向交易，故只有卖出才能平仓
-            mTotalRevenue = DataBaseManager.getInstance().getTotalRevenue();
             break;
         default:
             break;

@@ -14,6 +14,13 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+/**
+ * 转账记录列表适配器
+ * 
+ * @author Morgan.Ji
+ * @version 1.0
+ * @date 2016-02-21
+ */
 public class TransferRecordAdapter extends BaseAdapter {
 
     private List<TransferRecord> mRecords = new ArrayList<TransferRecord>();
@@ -44,7 +51,7 @@ public class TransferRecordAdapter extends BaseAdapter {
         ViewHolder viewHolder = null;
         if (null == convertView) {
             viewHolder = new ViewHolder();
-            convertView = LayoutInflater.from(mContext).inflate(R.layout.transfer_record_list_item, null);
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.app_account_transfer_record_list_item, null);
             viewHolder.mTransferDateTxt = (TextView) convertView.findViewById(R.id.transfer_date_textView);
             viewHolder.mTransferMoneyTxt = (TextView) convertView.findViewById(R.id.transfer_money_textView);
             viewHolder.mTransferTypeTxt = (TextView) convertView.findViewById(R.id.transfer_type_textView);
@@ -61,10 +68,8 @@ public class TransferRecordAdapter extends BaseAdapter {
     }
 
     class ViewHolder {
-
         TextView mTransferDateTxt;
         TextView mTransferMoneyTxt;
         TextView mTransferTypeTxt;
     }
-
 }

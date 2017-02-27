@@ -5,9 +5,5 @@
         <item>转入</item>
         <item>转出</item>
     </string-array>
-    <string-array name="deal_type">
-        <item>买入</item>
-        <item>卖出</item>
-    </string-array>
 
 </resources>

@@ -1,7 +1,5 @@
 package com.morgan.stockaccount.app;
 
-import com.morgan.stockaccount.data.StockDataManager;
-
 import android.app.Application;
 import android.content.Context;
 
@@ -19,12 +17,9 @@ public class App extends Application {
     public static final boolean DEBUG = true;
     private static App mInstance = null;
     
-    public static StockDataManager StockDataManager;
-
     @Override
     public void onCreate() {
         mInstance = this;
-        StockDataManager = new StockDataManager();
     }
 
     public static Context getContext() {

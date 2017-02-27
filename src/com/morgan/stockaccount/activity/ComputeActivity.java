@@ -39,11 +39,14 @@ public class ComputeActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_compute);
+        setContentView(R.layout.app_account_activity_compute);
         setTitle(R.string.compute);
         initView();
     }
 
+    /**
+     * 初始化界面控件
+     */
     private void initView() {
         mInputEditText = (EditText) findViewById(R.id.input_value_editText);
         mGainTwoTextView = (TextView) findViewById(R.id.gain_two_textView);

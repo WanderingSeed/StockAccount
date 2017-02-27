@@ -10,11 +10,7 @@ package com.morgan.stockaccount.data;
 public class Constants {
 
     /**
-     * 股票代码
+     * 导入导出文件名{@value}
      */
-    public static final String STOCK_CODE = "stock_code";
-    /**
-     * 股票代码
-     */
-    public static final String EXPORT_OR_IMPORT_FILE_NAME = "stockaccount.db";
+    public static final String EXPORT_OR_IMPORT_FILE_NAME = "account.db";
 }

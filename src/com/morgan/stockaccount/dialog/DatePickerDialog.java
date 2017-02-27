@@ -8,6 +8,13 @@ import android.widget.DatePicker;
 
 import com.morgan.stockaccount.R;
 
+/**
+ * 时间选择器
+ * 
+ * @author Morgan.Ji
+ * @version 1.0
+ * @date 2016-02-21
+ */
 public class DatePickerDialog extends AlertDialog {
 
     private DatePicker mDatePicker;
@@ -21,6 +28,9 @@ public class DatePickerDialog extends AlertDialog {
         initView();
     }
 
+    /**
+     * 初始化控件
+     */
     private void initView() {
         mDatePicker = (DatePicker) findViewById(R.id.datePicker);
         mSubmitBtn = (Button) findViewById(R.id.btn_submit);

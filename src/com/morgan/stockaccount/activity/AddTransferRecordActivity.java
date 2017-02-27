@@ -58,7 +58,7 @@ public class AddTransferRecordActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_transfer_record);
+        setContentView(R.layout.app_activity_add_transfer_record);
         setTitle(R.string.transfer);
         initView();
         Intent intent = getIntent();
@@ -69,6 +69,9 @@ public class AddTransferRecordActivity extends Activity {
         }
     }
 
+    /**
+     * 初始化界面控件
+     */
     private void initView() {
         mTransferTypeArray = getResources().getStringArray(R.array.transfer_type);
         mTransferTypeSpinner = (Spinner) findViewById(R.id.transfer_type_spinner);

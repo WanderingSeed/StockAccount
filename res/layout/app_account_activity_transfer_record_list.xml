@@ -4,11 +4,38 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <RadioGroup android:id="@+id/transfer_type_radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/transfer_all_radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_investment" />
+
+        <RadioButton
+            android:id="@+id/transfer_in_radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/transfer_in" />
+
+        <RadioButton
+            android:id="@+id/transfer_out_radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="@string/transfer_out" />
+    </RadioGroup>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:padding="@dimen/activity_horizontal_padding" >
 
         <TextView
@@ -23,6 +50,7 @@
             android:id="@+id/txt_total_transfer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:text="1000"
             android:textColor="@color/yellow"
             android:textSize="@dimen/sub_important_text_size" />
